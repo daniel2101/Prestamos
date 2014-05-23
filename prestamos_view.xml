@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+    <!-- VISTA PARA LAS MARCAS -->
+    <record id="prestamos_marcas_view_tree" model="ir.ui.view">
+        <field name="name">prestamos.marcas.view.tree</field>
+        <field name="model">prestamos.marcas.equipos</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Marcas">
+                <field name="name"/>
+                <field name="descripcion"/>
+            </tree>
+        </field>
+    </record>
+    
+    <record id="prestamos_marcas_view_form" model="ir.ui.view">
+        <field name="name">prestamos.marcas.view.form</field>
+        <field name="model">prestamos.marcas.equipos</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Marcas">
+                <field name="name" colspan="4"/>
+                <field name="descripcion" colspan="4"/>
+            </form>
+        </field>
+    </record>
+    
+    <record id="prestamos_marcas_view_search" model="ir.ui.view">
+        <field name="name">prestamos.marcas.view.search</field>
+        <field name="model">prestamos.marcas.equipos</field>
+        <field name="type">search</field>
+        <field name="arch" type="xml">
+            <search string="Marcas">
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+    
+    <!-- VISTAS PARA LOS TIPOS DE EQUIPO -->
+    
+    <record id="prestamos_tipo_view_tree" model="ir.ui.view">
+        <field name="name">prestamos.tipo.view.tree</field>
+        <field name="model">prestamos.tipo.equipos</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Tipos de Equipo">
+                <field name="name"/>
+                <field name="descripcion"/>
+            </tree>
+        </field>
+    </record>
+    
+    <record id="prestamos_tipo_view_form" model="ir.ui.view">
+        <field name="name">prestamos.tipo.view.form</field>
+        <field name="model">prestamos.tipo.equipos</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Tipos de Equipo">
+                <field name="name" colspan="4"/>
+                <field name="descripcion" colspan="4"/>
+            </form>
+        </field>
+    </record>
+    
+    <record id="prestamos_tipo_view_search" model="ir.ui.view">
+        <field name="name">prestamos.tipo.view.search</field>
+        <field name="model">prestamos.tipo.equipos</field>
+        <field name="type">search</field>
+        <field name="arch" type="xml">
+            <search string="Tipos de Equipo">
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+    
+    <!-- VISTAS PARA LOS EQUIPOS DEL LABORATORIO -->
+    
+        <!-- VISTA PARA USUARIOS -->
+    <record id="prestamos_equipo_view_tree1" model="ir.ui.view">
+        <field name="name">prestamos.equipo.view.tree1</field>
+        <field name="model">prestamos.equipo</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Equipo del Laboratorio">
+                <field name="name"/>
+                <field name="marca"/>
+                <field name="descripcion"/>
+            </tree>
+        </field>
+    </record>
+    
+        <!-- VISTA PARA ADMINISTRADORES -->
+    <record id="prestamos_equipo_view_tree2" model="ir.ui.view">
+        <field name="name">prestamos.equipo.view.tree2</field>
+        <field name="model">prestamos.equipo</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Inventario de Laboratorio" colors="blue:state=='disponible';red:state=='ocupado'">
+                <field name="no_inventario"/>
+                <field name="name"/>
+                <field name="marca"/>
+                <field name="modelo"/>
+                <field name="descripcion"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+    
+    <record id="prestamos_equipo_view_form" model="ir.ui.view">
+        <field name="name">prestamos.equipo.view.form</field>
+        <field name="model">prestamos.equipo</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Equipo de Laboratorio">
+                <group col="2" colspan="3">
+                    <field name="no_inventario"/>
+                    <field name="name"/>
+                </group>
+                <group col="2" colspan="1">
+                    <field name="prestar"/>
+                    <field name="state"/>
+                </group>
+                <field name="marca"/>
+                <field name="modelo"/>
+                <group col="6" colspan="4">
+                    <field name="no_serie"/>    
+                    <field name="snid"/>
+                    <field name="patrimonio"/>
+                </group>
+                <separator string="Descripción del Equipo" colspan="4"/>
+                <field name="descripcion" nolabel="1" colspan="4"/>
+            </form>
+        </field>
+    </record>
+    
+    <!-- VISTA PARA EL ADMINISTRADOR -->
+    <record id="prestamos_equipo_view_search1" model="ir.ui.view">
+        <field name="name">prestamos.equipo.view.search</field>
+        <field name="model">prestamos.equipo</field>
+        <field name="type">search</field>
+        <field name="arch" type="xml">
+            <search string="Equipo">
+                <filter string="DISPONIBLE" icon="gtk-yes" domain="[('state','=','disponible')]"/>
+                <filter string="OCUPADO" icon="gtk-no" domain="[('state','=','ocupado')]"/>
+                <filter string="PARA PRESTAR" icon="terp-personal+" domain="[('prestar','=','True')]"/>
+                <separator orientation="vertical"/>
+                <newline/>
+                <field name="name"/>
+                <field name="marca"/>
+                <field name="modelo"/>
+                <field name="no_serie"/>
+            </search>
+        </field>
+    </record>
+    
+    <!-- VISTA PARA LOS USUARIOS -->
+    <record id="prestamos_equipo_view_search2" model="ir.ui.view">
+        <field name="name">prestamos.equipo.view.search2</field>
+        <field name="model">prestamos.equipo</field>
+        <field name="type">search</field>
+        <field name="arch" type="xml">
+            <search string="Equipo">
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+    
+    
+    <!-- VISTA PARA SOLICITAR EQUIPO -->
+    <record id="prestamos_articulos_view_form" model="ir.ui.view">
+        <field name="name">prestamos.articulos.view.form</field>
+        <field name="model">prestamos.articulos</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Articulo Solicitado">
+                <group col="8" colspan="4">
+                    <field name="cantidad" colspan="2"/>
+                    <field name="name" colspan="4"/>
+                </group>
+            </form>
+        </field>
+    </record>
+    
+    <!-- VISTA CON LA LISTA DE EQUIPOS SOLICITADOS -->
+    <record id="prestamos_articulos_view_tree" model="ir.ui.view">
+        <field name="name">prestamos.articulos.view.tree</field>
+        <field name="model">prestamos.articulos</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Lista de Articulos">
+                <field name="cantidad"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>                                                           
+    
+    <!-- VISTA PARA LA TABLA DE PRESTAMOS -->
+        <!-- VISTA PARA USUARIOS -->
+    <record id="prestamos_solicitud_view_tree1" model="ir.ui.view">
+        <field name="name">prestamos.solicitud.view.tree</field>
+        <field name="model">prestamos.solicitud</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Solicitudes Anteriores">
+                <field name="name"/>
+                <field name="usuario"/>
+                <field name="fecha"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+        <!-- VISTA PARA SERVICIO SOCIAL -->
+    <record id="prestamos_solicitud_view_tree2" model="ir.ui.view">
+        <field name="name">prestamos.solicitud.view.tree2</field>
+        <field name="model">prestamos.solicitud</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Lista de Solicitudes">
+                <field name="name"/>
+                <field name="usuario"/>
+                <field name="fecha"/>
+                <field name="fecha_aut"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+        <!-- VISTA PARA EL ADMINISTRADOR -->
+    <record id="prestamos_solicitud_view_tree3" model="ir.ui.view">
+        <field name="name">prestamos.solicitud.tree3</field>
+        <field name="model">prestamos.solicitud</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Lista de Solicitudes">
+                <field name="name"/>
+                <field name="usuario"/>
+                <field name="fecha"/>
+                <field name="usuario_aut" states="autorizado,entregado"/>
+                <field name="fecha_aut" states="autorizado,entregado"/>
+                <field name="usuario_ent" states="entregado"/>
+                <field name="fecha_ent" states="entregado"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+    
+    <!-- VISTA DE FORMULARIO -->
+    <record id="prestamos_solicitud_view_form" model="ir.ui.view">
+        <field name="name">prestamos.solicitud.view.form</field>
+        <field name="model">prestamos.solicitud</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Ficha de Solicitud">
+                <group col="6" colspan="4">
+                    <field name="name" readonly="1" domain="[('usuario','=',uid)]"/>
+                    <field name="fecha"/>
+                    <field name="state"/>
+                </group>
+                <notebook colspan="4">
+                    <page string="Equipo Solicitado">
+                        <field name="material" nolabel="1" colspan="4" widget="one2many_list" attrs="{'readonly': [('state', 'in',('entregado','autorizado'))]}"/>
+                        <group col="2" colspan="3"></group>
+                        <group col="6" colspan="1">
+                            <button name="button_prestar" string="Prestar" states="solicitud" type="object" icon="gtk-redo" colspan="1" groups="Prestamos.prestamos_jefe,Prestamos.prestamos_servicio"/>
+                            <button name="button_recibir" string="Recibir" states="autorizado" type="object" icon="gtk-undo" colspan="1" groups="Prestamos.prestamos_jefe,Prestamos.prestamos_servicio"/>
+                        </group>
+                    </page>
+                    <page string="Datos Tecnicos" groups="Prestamos.prestamos_jefe">
+                        <separator string="Autorización" colspan="4"/>
+                        <field name="usuario_aut"/>
+                        <field name="fecha_aut"/>
+                        <separator string="Entrega" colspan="4"/>
+                        <field name="usuario_ent"/>
+                        <field name="fecha_ent"/>
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+    
+    <!-- VISTA DE BUSQUEDA PARA ADMIN -->
+    <record id="prestamos_solicitud_view_search1" model="ir.ui.view">
+        <field name="name">prestamos.solicitud.view.search1</field>
+        <field name="model">prestamos.solicitud</field>
+        <field name="type">search</field>
+        <field name="arch" type="xml">
+            <search string="Solicitudes de Equipo">
+                <filter string="SOLICITUD" icon="STOCK_EDIT" domain="[('state','=','solicitud')]"/>
+                <filter string="AUTORIZADO" icon="STOCK_REDO" domain="[('state','=','autorizado')]"/>
+                <filter string="ENTREGADO" icon="STOCK_UNDO" domain="[('state','=','entregado')]"/>
+                <separator orientation="vertical"/>
+                <newline/>
+                <field name="name"/>
+                <field name="usuario" string="Solicitante"/>
+                <field name="fecha" string="Fecha de Solicitud"/>
+                <newline/>
+                <field name="usuario_aut" widget="selection"/>
+                <field name="fecha_aut"/>
+                <newline/>
+                <field name="usuario_ent" widget="selection"/>
+                <field name="fecha_ent"/>
+            </search>
+        </field>
+    </record>
+    
+     <!-- VISTA DE BUSQUEDA PARA SERVICIO -->
+    <record id="prestamos_solicitud_view_search3" model="ir.ui.view">
+        <field name="name">prestamos.solicitud.view.search2</field>
+        <field name="model">prestamos.solicitud</field>
+        <field name="type">search</field>
+        <field name="arch" type="xml">
+            <search string="Solicitudes de Equipo">
+                <filter string="SOLICITUD" icon="STOCK_EDIT" domain="[('state','=','solicitud')]"/>
+                <filter string="AUTORIZADO" icon="STOCK_REDO" domain="[('state','=','autorizado')]"/>
+                <filter string="ENTREGADO" icon="STOCK_UNDO" domain="[('state','=','entregado')]"/>
+                <separator orientation="vertical"/>
+                <newline/>
+                <field name="name"/>
+                <field name="usuario"/>
+            </search>
+        </field>
+    </record>
+    
+    <!-- VISTA DE BUSQUEDA PARA USUARIO -->
+    <record id="prestamos_solicitud_view_search2" model="ir.ui.view">
+        <field name="name">prestamos.solicitud.view.search2</field>
+        <field name="model">prestamos.solicitud</field>
+        <field name="type">search</field>
+        <field name="arch" type="xml">
+            <search string="Solicitudes de Equipo">
+                <filter string="SOLICITUD" icon="STOCK_EDIT" domain="[('state','=','solicitud')]"/>
+                <filter string="AUTORIZADO" icon="STOCK_REDO" domain="[('state','=','autorizado')]"/>
+                <filter string="ENTREGADO" icon="STOCK_UNDO" domain="[('state','=','entregado')]"/>
+                <separator orientation="vertical"/>
+                <newline/>
+            </search>
+        </field>
+    </record>
+    
+    <!-- ACCIONES PARA LAS VISTAS -->
+                    <!-- TIPOS DE EQUIPO-->
+    <record id="action_prestamos_tipo_equipo" model="ir.actions.act_window">
+        <field name="name">Tipo de Equipo</field>
+        <field name="res_model">prestamos.tipo.equipos</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="prestamos_tipo_view_tree"/>
+        <field name="search_view_id" ref="prestamos_tipo_view_search"/>
+    </record>
+    
+                    <!-- MARCAS-->
+    <record id="action_prestamos_marca_equipo" model="ir.actions.act_window">
+        <field name="name">Marcas</field>
+        <field name="res_model">prestamos.marcas.equipos</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="prestamos_marcas_view_search"/>
+    </record>
+                    <!-- INVENTARIO DE EQUIPO-->
+    <record id="action_prestamos_equipo" model="ir.actions.act_window">
+        <field name="name">Inventario de Equipo</field>
+        <field name="res_model">prestamos.equipo</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="prestamos_equipo_view_tree2"/>  
+        <field name="search_view_id" ref="prestamos_equipo_view_search1"/>
+    </record>
+                    <!-- PRESTAMOS DE EQUIPO PARA USUARIO -->
+    <record id="action_prestamos_solicitud1" model="ir.actions.act_window">
+        <field name="name">Solicitud de Equipo</field>
+        <field name="res_model">prestamos.solicitud</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="prestamos_solicitud_view_tree1"/>
+        <field name="search_view_id" ref="prestamos_solicitud_view_search2"/>
+        <field name="domain">[('usuario','=',uid)]</field>
+        <field name="filter" eval="True"/>
+    </record>
+                    <!-- PRESTAMOS DE EQUIPO PARA SERVICIO SOCIAL -->
+    <record id="action_prestamos_solicitud2" model="ir.actions.act_window">
+        <field name="name">Prestamos de Equipo</field>
+        <field name="res_model">prestamos.solicitud</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="prestamos_solicitud_view_tree2"/>
+        <field name="search_view_id" ref="prestamos_solicitud_view_search3"/>
+    </record>
+    
+                    <!-- PRESTAMOS DE EQUIPO PARA ADMIN -->
+    <record id="action_prestamos_solicitud3" model="ir.actions.act_window">
+        <field name="name">Prestamos de Equipo</field>
+        <field name="res_model">prestamos.solicitud</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="prestamos_solicitud_view_tree3"/>
+        <field name="search_view_id" ref="prestamos_solicitud_view_search1"/>
+    </record>
+    
+    <!-- COTROL DE EQUIPO -->
+    <menuitem name="Control de Equipo" id="menu_control_equipo" parent="menu_prestamos" groups="Prestamos.prestamos_jefe"/>
+    <menuitem name="Control de Equipo" id="menu_control_equipo2" parent="menu_prestamos" groups="Prestamos.prestamos_servicio"/>
+    <menuitem action="action_prestamos_equipo" id="menu_action_prestamos_equipo" parent="menu_control_equipo"/>
+    <menuitem action="action_prestamos_tipo_equipo" id="menu_action_prestamos_tipo_equipo" parent="menu_control_equipo"/>
+    <menuitem action="action_prestamos_marca_equipo" id="menu_action_prestamos_marca_equipo" parent="menu_control_equipo"/>
+    <menuitem action="action_prestamos_equipo" id="menu_action_prestamos_equipo2" parent="menu_control_equipo2"/>
+    <menuitem action="action_prestamos_tipo_equipo" id="menu_action_prestamos_tipo_equipo2" parent="menu_control_equipo2"/>
+    <menuitem action="action_prestamos_marca_equipo" id="menu_action_prestamos_marca_equipo2" parent="menu_control_equipo2"/>
+    
+    <!-- PRESTAMOS -->
+    <menuitem name="Prestamos" id="menu_control_prestamos" parent="menu_prestamos"/>
+    <menuitem action="action_prestamos_solicitud3" id="menu_prestamos_solicitud_admin3" parent="menu_control_prestamos" groups="Prestamos.prestamos_jefe"/>
+    <menuitem action="action_prestamos_solicitud2" id="menu_prestamos_solicitud_admin2" parent="menu_control_prestamos" groups="Prestamos.prestamos_servicio"/>
+    <menuitem action="action_prestamos_solicitud1" id="menu_prestamos_solicitud_admin1" parent="menu_control_prestamos" groups="Prestamos.prestamos_alumnos"/>
+    </data>
+</openerp>

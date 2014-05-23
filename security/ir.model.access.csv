@@ -1,0 +1,17 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"acceso_prestamos_marcas1","Prestamos Marcas1","model_prestamos_marcas_equipos","Prestamos.prestamos_alumnos",0,0,0,0
+"acceso_prestamos_marcas2","Prestamos Marcas2","model_prestamos_marcas_equipos","Prestamos.prestamos_servicio",1,1,1,0
+"acceso_prestamos_marcas3","Prestamos Marcas3","model_prestamos_marcas_equipos","Prestamos.prestamos_jefe",1,1,1,1
+"acceso_prestamos_tipo_equipo1","Prestamos Tipo Equipo","model_prestamos_tipo_equipos","Prestamos.prestamos_alumnos",1,0,0,0
+"acceso_prestamos_tipo_equipo2","Prestamos Tipo Equipo","model_prestamos_tipo_equipos","Prestamos.prestamos_servicio",1,1,1,0
+"acceso_prestamos_tipo_equipo3","Prestamos Tipo Equipo","model_prestamos_tipo_equipos","Prestamos.prestamos_jefe",1,1,1,1
+"acceso_prestamos_equipo1","Prestamos Equipo","model_prestamos_equipo","Prestamos.prestamos_alumnos",1,0,0,0
+"acceso_prestamos_equipo2","Prestamos Equipo","model_prestamos_equipo","Prestamos.prestamos_servicio",1,1,1,0
+"acceso_prestamos_equipo3","Prestamos Equipo","model_prestamos_equipo","Prestamos.prestamos_jefe",1,1,1,1
+"acceso_prestamos_articulos1","Prestamos Articulos","model_prestamos_articulos","Prestamos.prestamos_alumnos",1,1,1,1
+"acceso_prestamos_articulos2","Prestamos Articulos","model_prestamos_articulos","Prestamos.prestamos_servicio",1,1,1,1
+"acceso_prestamos_articulos3","Prestamos Articulos","model_prestamos_articulos","Prestamos.prestamos_jefe",1,1,1,1
+"acceso_prestamos_solicitud1","Prestamos Solicitud","model_prestamos_solicitud","Prestamos.prestamos_alumnos",1,1,1,1
+"acceso_prestamos_solicitud2","Prestamos Solicitud","model_prestamos_solicitud","Prestamos.prestamos_servicio",1,1,1,1
+"acceso_prestamos_solicitud3","Prestamos Solicitud","model_prestamos_solicitud","Prestamos.prestamos_jefe",1,1,1,1
+

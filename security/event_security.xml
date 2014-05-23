@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<openerp>
+  <data>
+    <record id="prestamos_alumnos" model="res.groups">
+        <field name="name">LRedes / Alumnos</field>
+    </record>
+    <record id="prestamos_servicio" model="res.groups">
+        <field name="name">LRedes / Servicio Social</field>
+    </record>
+    <record id="prestamos_jefe" model="res.groups">
+        <field name="name">LRedes / Jefe del Laboratorio</field>
+    </record>
+  </data>
+</openerp>

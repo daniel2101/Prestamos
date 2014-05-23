@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <!-- PERMISOS PARA LA TABLA DE MARCAS -->
+        <record id="acceso_prestamos_marcas1" model="ir.model.access">
+            <field name="name">Prestamos Marcas1</field>
+            <field name="model_id">prestamos.marcas.equipos</field>
+            <field name="group_id">Prestamos.prestamos_alumnos</field>
+            <field name="perm_read">0</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <record id="acceso_prestamos_marcas2" model="ir.model.access">
+            <field name="name">Prestamos Marcas2</field>
+            <field name="model_id">prestamos.marcas.equipos</field>
+            <field name="group_id">Prestamos.prestamos_servicio</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <record id="acceso_prestamos_marcas3" model="ir.model.access">
+            <field name="name">Prestamos Marcas3</field>
+            <field name="model_id">prestamos.marcas.equipos</field>
+            <field name="group_id">Prestamos.prestamos_jefe</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        
+        <!-- PERMISOS PARA LA TABLA TIPO DE EQUIPO -->
+        <record id="acceso_prestamos_tipo_equipo1" model="ir.model.access">
+            <field name="name">Prestamos Tipo Equipo1</field>
+            <field name="model_id">prestamos.tipo.equipos</field>
+            <field name="group_id">Prestamos.prestamos_alumnos</field>
+            <field name="perm_read">0</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <record id="acceso_prestamos_tipo_equipo2" model="ir.model.access">
+            <field name="name">Prestamos Tipo Equipos2</field>
+            <field name="model_id">prestamos.tipo.equipos</field>
+            <field name="group_id">Prestamos.prestamos_servicio</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <record id="acceso_prestamos_tipo_equipo3" model="ir.model.access">
+            <field name="name">Prestamos Tipo Equipos3</field>
+            <field name="model_id">prestamos.marcas.equipos</field>
+            <field name="group_id">Prestamos.prestamos_jefe</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        
+        
+        <!-- PERMISOS PARA LA TABLA DE EQUIPO -->
+        <record id="acceso_prestamos_equipo1" model="ir.model.access">
+            <field name="name">Prestamos Equipo1</field>
+            <field name="model_id">prestamos.equipo</field>
+            <field name="group_id">Prestamos.prestamos_alumnos</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <record id="acceso_prestamos_equipo2" model="ir.model.access">
+            <field name="name">Prestamos Equipos2</field>
+            <field name="model_id">prestamos.tipo.equipo</field>
+            <field name="group_id">Prestamos.prestamos_servicio</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <record id="acceso_prestamos_equipo3" model="ir.model.access">
+            <field name="name">Prestamos Equipos3</field>
+            <field name="model_id">prestamos.equipo</field>
+            <field name="group_id">Prestamos.prestamos_jefe</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        
+        <!-- PERMISOS PARA LA TABLA DE ARTICULOS -->
+        <record id="acceso_prestamos_articulos1" model="ir.model.access">
+            <field name="name">Prestamos Articulos1</field>
+            <field name="model_id">prestamos.articulos</field>
+            <field name="group_id">Prestamos.prestamos_alumnos</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="acceso_prestamos_articulos2" model="ir.model.access">
+            <field name="name">Prestamos Articulos2</field>
+            <field name="model_id">prestamos.articulos</field>
+            <field name="group_id">Prestamos.prestamos_servicio</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="acceso_prestamos_articulos3" model="ir.model.access">
+            <field name="name">Prestamos Articulos3</field>
+            <field name="model_id">prestamos.articuos</field>
+            <field name="group_id">Prestamos.prestamos_jefe</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        
+        <!-- PERMISOS PARA LA TABLA DE SOLICITUD -->
+        <record id="acceso_prestamos_solicitud1" model="ir.model.access">
+            <field name="name">Prestamos Solicitud1</field>
+            <field name="model_id">prestamos.solicitud</field>
+            <field name="group_id">Prestamos.prestamos_alumnos</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="acceso_prestamos_solicitud2" model="ir.model.access">
+            <field name="name">Prestamos Solicitud2</field>
+            <field name="model_id">prestamos.solicitud</field>
+            <field name="group_id">Prestamos.prestamos_servicio</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="acceso_prestamos_solicitud3" model="ir.model.access">
+            <field name="name">Prestamos Solicitud3</field>
+            <field name="model_id">prestamos.solicitud</field>
+            <field name="group_id">Prestamos.prestamos_jefe</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+    </data>
+</openerp>

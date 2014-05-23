@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <report auto="False" id="report_prestamos_inventario" model="prestamos.equipo" name="prestamos.equipo"
+                rml="Prestamos/report/inventario_resumido.rml" string="Inventario Resumido"
+                usage="default"/>
+        <report auto="False" id="report_prestamos_inventario_equipos" model="prestamos.equipo" name="prestamos.equipo.completo"
+                rml="Prestamos/report/inventario_equipo.rml" string="Inventario de equipos"
+                usage="default"/>
+    </data>
+</openerp>

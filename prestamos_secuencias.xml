@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+    
+        <record id="seq_type_inventario" model="ir.sequence.type">
+            <field name="name">Inventario del laboratorio</field>
+            <field name="code">inventario.in</field>
+        </record>
+        
+        <record id="seq_in" model="ir.sequence">
+            <field name="name">Inventario del laboratorio</field>
+            <field name="code">inventario.in</field>
+            <field name="prefix">IN-</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        
+        <record id="seq_type_prestamos" model="ir.sequence.type">
+            <field name="name">Prestamos del laboratorio</field>
+            <field name="code">prestamos.op</field>
+        </record>
+        
+        <record id="seq_op" model="ir.sequence">
+            <field name="name">Prestamos del laboratorio</field>
+            <field name="code">prestamos.op</field>
+            <field name="prefix">OP-%(day)s%(month)s</field>
+            <field name="padding">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</openerp>
